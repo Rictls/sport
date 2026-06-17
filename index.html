@@ -45,14 +45,26 @@ body{display:flex;flex-direction:column}
 .bgs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
 .bg{font-size:11px;font-weight:600;padding:3px 7px;border-radius:4px;background:rgba(249,115,22,.15);color:#fb923c}
 .slbl{font-size:11px;font-weight:600;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:9px}
-.sgrid{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:12px;align-items:flex-start}
-.sit{display:flex;flex-direction:column;align-items:center;gap:4px}
-.sdot{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;color:var(--tx2);background:var(--bg3)}
+.sgrid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:flex-start}
+.sit{display:flex;flex-direction:column;align-items:center;gap:3px}
+.sdot{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;cursor:pointer;color:var(--tx2);background:var(--bg3);flex-shrink:0}
 .sdot.dn{background:var(--gn);border-color:var(--gn);color:#fff}
-.kgi{width:50px;background:var(--bg3);border:0.5px solid var(--bd);border-radius:6px;padding:5px 3px;font-size:13px;font-weight:600;color:var(--tx);text-align:center;font-family:inherit}
+.kgi{width:44px;background:var(--bg3);border:0.5px solid var(--bd);border-radius:6px;padding:4px 2px;font-size:12px;font-weight:600;color:var(--tx);text-align:center;font-family:inherit}
 .kgi:focus{outline:none;border-color:var(--p1)}
 .kgi.gn{color:var(--gn)}
+.kgi.ri{color:var(--p1);border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.08)}
+.kgi.ri:focus{border-color:var(--p1)}
 .kglb{font-size:9px;color:var(--tx3)}
+.sit-inner{display:flex;flex-direction:column;align-items:center;gap:3px}
+.ex-col{display:flex;flex-direction:column;align-items:center;gap:2px}
+.ex-col-lbl{font-size:8px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.3px}
+.ex-cols{display:flex;gap:4px;align-items:flex-start}
+.ex-divider{width:1px;background:var(--bd2);margin:0 1px;align-self:stretch}
+.tog-btn{font-size:9px;font-weight:700;padding:2px 5px;border-radius:10px;border:1px solid var(--bd2);background:var(--bg3);color:var(--tx3);cursor:pointer;margin-top:2px;letter-spacing:.3px;white-space:nowrap}
+.tog-btn.act{background:var(--p1);border-color:var(--p1);color:#fff}
+.tog-btn.drop-act{background:#f97316;border-color:#f97316;color:#fff}
+.tog-btn.bi-act{background:#8b5cf6;border-color:#8b5cf6;color:#fff}
+.tog-btn.tri-act{background:#ef4444;border-color:#ef4444;color:#fff}
 .tbox{background:var(--bg3);border-radius:var(--rs);padding:13px;border:0.5px solid var(--bd)}
 .tlbl{font-size:11px;color:var(--tx3);text-align:center;margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 .tdisp{font-size:44px;font-weight:200;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:4px;margin-bottom:4px}
@@ -86,9 +98,11 @@ body{display:flex;flex-direction:column}
   <div class="t1" id="prog-title">PRO MASS EVOLUTION</div>
   <div class="t2" id="tsub"></div>
 </div>
-<div class="progsel">
+<div class="progsel" id="progsel">
   <button class="psbtn" id="ps0" style="background:#3b82f6;color:#fff;border-color:#3b82f6">PRO MASS</button>
   <button class="psbtn" id="ps1">CLASSIC BEAST</button>
+  <button class="psbtn" id="ps2">SHREDZ</button>
+  <button class="psbtn" id="ps3">BACK IN THE GAME</button>
 </div>
 <div class="ptabs" id="ptabs"></div>
 <div class="jnav" id="jnav"></div>
@@ -98,28 +112,8 @@ body{display:flex;flex-direction:column}
   <div id="exlist"></div>
 </div>
 <div class="page" id="pg-recap" style="display:none">
-  <div class="stgrid">
-    <div class="stc"><div class="stn" style="color:var(--p1)">12</div><div class="stl">semaines</div></div>
-    <div class="stc"><div class="stn" style="color:var(--gn)">6</div><div class="stl">j/semaine</div></div>
-    <div class="stc"><div class="stn" style="color:var(--p2)">+6kg</div><div class="stl">objectif</div></div>
-  </div>
-  <div class="seclbl">Complementation</div>
-  <div class="rcard"><div class="rch">Matin</div><div class="rcb">Multivitamines 1 dose - Omega-3 3-4g - Vitamine D3 3000-5000 IU - Magnesium 250mg</div></div>
-  <div class="rcard"><div class="rch">Pre-training</div><div class="rcb">Big Shot Prozis 1 dose - Creatine 5g</div></div>
-  <div class="rcard"><div class="rch">Intra-training</div><div class="rcb">EAA 10-15g - Sel rose Himalaya 1 pincee (electrolytes)</div></div>
-  <div class="rcard"><div class="rch">Post-training</div><div class="rcb">Pro CGT 30g - Glucides rapides 50-80g</div></div>
-  <div class="rcard"><div class="rch">Soir</div><div class="rcb">ZMB6 2 gelules (Mg + Zinc + B6) - Omega-3 2-3g</div></div>
-  <br>
-  <div class="seclbl">Resultats attendus</div>
-  <div class="rcard"><div class="rcb">
-    <div class="rrow"><span>Prise de poids</span><span style="color:var(--gn)">+4 a +6 kg</span></div>
-    <div class="rrow"><span>Gain de force</span><span style="color:var(--p1)">+15 a +25%</span></div>
-    <div class="rrow"><span>Masse musculaire</span><span style="color:var(--p1)">+3 a +5 kg</span></div>
-    <div class="rrow"><span>Pectoraux</span><span>+3-5 cm</span></div>
-    <div class="rrow"><span>Bras</span><span>+2-3 cm</span></div>
-    <div class="rrow"><span>Cuisses</span><span>+3-4 cm</span></div>
-    <div class="rrow"><span>Epaules</span><span>+4-6 cm</span></div>
-  </div></div>
+  <div class="stgrid" id="recap-stats"></div>
+  <div id="recap-content"></div>
 </div>
 <nav class="bnav">
   <div class="bnb act" id="bn0">
@@ -293,8 +287,7 @@ var PHASES = [
   {n:"HIIT 30/30",r:"16 min",rp:0,t:["Sprint 90%","Rameur/velo"],d:"30 sec sprint 90% + 30 sec repos actif - 8 rounds (8 min) - 2 min repos - Repeter 1 fois."},
  ]},
 ]},
-];
-var CB = {phases:[
+];var CB = {phases:[
  {nm:"Bloc 1 - Semaines 1-4", sm:"S1 a S4", cl:"#6d28d9", jours:[
   {nm:"Seance 1", ms:"Pectoraux", inf:"Pectoraux - ~5 exercices", ex:[
    {n:"Developpe incline barre",r:"7 series",rp:120,t:["2-0-1-0 puis 2-0-1-0"],d:"7 series dont 3 d echauffement (15/10/6 reps) puis 4 series de travail a 5/5/5/3 reps. Charges indicatives: 60-80-100-130kg."},
@@ -441,38 +434,448 @@ var CB = {phases:[
   ]},
  ]},
 ]};
+var SZ = {phases:[
+{nm:"Phase 1 - Construction", sm:"Semaines 1-4", cl:"#3b82f6", jours:[
+ {nm:"Lundi", ms:"Pecto + Abdos", inf:"Pecto 5 exos + circuit abdos - Dropsets, bisets", ex:[
+  {n:"Developpe incline barre",r:"6 series: 15-10-8-6-3-10",rp:90,t:["PYRAMIDAL","Echauffement S1-2"],d:"Echauffement series 1-2. Pyramidal descendant puis retour 10 reps. Series 4-5 charges max. Serie 6 pump."},
+  {n:"Developpe couche halteres",r:"4x10-10-8-6",rp:90,t:["DROPSET","derniere serie"],d:"DROPSET derniere serie: decharger -20% et enchainer immediatement 10 reps supplementaires. Amplitude complete, coudes 45 deg."},
+  {n:"Developpe machine Hammer",r:"4x10-10-8-6",rp:90,t:["DROPSET","-20%","TEMPO RAPIDE"],d:"DROPSET derniere serie: -20% puis 10 reps supplementaires. TEMPO RAPIDE (contraction explosive)."},
+  {n:"Poulies vis-a-vis",r:"4x(10 ecartes+10 developpes)",rp:30,t:["BISET","SANS REPOS"],d:"BISET enchaine: 10 reps en ecartes puis SANS REPOS 10 reps en developpes. Tension constante. Recup 30 sec."},
+  {n:"Pompes declinees",r:"3x Max reps",rp:60,t:["Max reps","TEMPO RAPIDE"],d:"Pieds sureleves, TEMPO RAPIDE. Si trop dur: pieds au sol puis a genoux pour finir a l echec."},
+  {n:"ABDOS - Circuit 3 exercices",r:"4x(20+15+1min gainage)",rp:60,t:["CIRCUIT","SANS REPOS"],d:"20 crunchs + 15 releves de buste + 1 min gainage frontal. Enchainer les 3 SANS REPOS. Recup 1 min."},
+ ]},
+ {nm:"Mardi", ms:"Dos", inf:"Dos 5 exos + biset lombaires - Largeur et epaisseur", ex:[
+  {n:"Tractions prise large",r:"6 series: 15-10-10-8-8-8",rp:90,t:["Echauffement S1-2","Lestees si possible S4-6"],d:"Echauffement series 1-2 au tirage poulie haute. Series 4-5-6: tractions lestees si possible. TEMPO normal."},
+  {n:"Tirage poulie basse serree",r:"4x10",rp:90,t:["DROPSET","derniere serie"],d:"DROPSET derniere serie: -20% puis 10 reps immediates. Tirer coudes vers hanches, squeeze omoplates."},
+  {n:"Souleve de terre",r:"4x10",rp:90,t:["Dos neutre","Gainage"],d:"Dos neutre. Gainage abdominal. Bar proche des tibias. Extension hanches explosive. Descente controlee 3 sec."},
+  {n:"Pullover haltere",r:"4x10",rp:90,t:["Etirement cage thoracique"],d:"Allonge en travers banc. Haltere derriere tete (stretch maximal) puis remonter au-dessus poitrine."},
+  {n:"BISET: Extension corde + Banc lombaires",r:"4x(15+15)",rp:60,t:["BISET","SANS REPOS"],d:"BISET: Extension a la corde bras tendu (focus grand dorsal) enchaine SANS REPOS avec extension au banc a lombaires 15 reps."},
+ ]},
+ {nm:"Mercredi", ms:"Jambes+Mollets+Abdos", inf:"Jambes 6 exos + mollets + circuit abdos", ex:[
+  {n:"Leg extension",r:"5x20-20-15-10-8",rp:75,t:["TRIPLE DROPSET","derniere serie"],d:"TRIPLE DROPSET derniere serie: 8 reps -> -20% -> 8 reps -> -20% -> 8 reps. Serie 1 echauffement."},
+  {n:"Squat barre devant",r:"5x20-10-10-10-10",rp:90,t:["Echauffement S1","Tempo LENT S2-3"],d:"Echauffement serie 1. Series 2-3 tempo LENT (3 sec descente). Series 4-5 normal. Descendre parallele minimum."},
+  {n:"Presse inclinee pieds serres",r:"4x20",rp:60,t:["+ 15 mollets pendant recup"],d:"15 reps de mollets a la presse pendant la recuperation. Pieds rapproches = focus quadriceps."},
+  {n:"Leg curl",r:"4x10",rp:60,t:["DROPSET","Tempo LENT S1-2"],d:"DROPSET derniere serie: -20% puis 10 reps. Tempo LENT series 1-2, normal series 3-4."},
+  {n:"Souleve de terre jambes semi-tendues",r:"4x15",rp:75,t:["Focus ischios","Dos neutre"],d:"Focus ischio-jambiers. Descendre controle buste parallele au sol. Dos neutre imperativement."},
+  {n:"Mollets assis",r:"4x15",rp:30,t:["Tempo RAPIDE S3-4","Amplitude MAX"],d:"Tempo normal series 1-2, tempo RAPIDE series 3-4. Amplitude maximale. Focus soleaires."},
+  {n:"ABDOS - Releve genoux + Releve buste + Rotations",r:"4x(15+15+15)",rp:30,t:["CIRCUIT","30 sec recup"],d:"Circuit: Releve genoux suspendus + releve de buste banc decline + 15 rotations. Enchainer SANS REPOS."},
+ ]},
+ {nm:"Jeudi", ms:"Epaules+Trapezes", inf:"Epaules 5 exos + trapezes 2 exos - Volume 3D", ex:[
+  {n:"Developpe militaire debout",r:"5x20-15-12-10-8",rp:90,t:["TRIPLE DROPSET","derniere serie"],d:"TRIPLE DROPSET derniere serie: 8 reps -> -20% -> 8 reps -> -20% -> 8 reps. Echauffement serie 1."},
+  {n:"Elevations laterales poulies",r:"4x15",rp:60,t:["Tension constante","Tempo LENT S1-2"],d:"Tension constante tout le mouvement. Tempo LENT series 1-2, normal 3-4. Peak contraction 1 sec."},
+  {n:"Oiseau sur banc",r:"4x15",rp:60,t:["Peak contraction","Focus arriere deltoide"],d:"Coudes legerement flechis et FIXES. Focus arriere deltoide. Peak contraction 1 sec en haut."},
+  {n:"Elevations frontales halteres alternes",r:"4x(10 alternes+5 simultanees)",rp:60,t:["10 alternes + 5 simultanees"],d:"10 reps alternes + 5 reps les 2 halteres simultanement SANS REPOS entre. Focus deltoide anterieur."},
+  {n:"Shrugs barre guidee",r:"4x15",rp:60,t:["Peak contraction 2 sec","Mouvement vertical pur"],d:"Peak contraction 2 sec en haut. Pas de rotation epaules. Tempo normal."},
+  {n:"Shrugs halteres",r:"4x15",rp:60,t:["TRIPLE DROPSET","derniere serie"],d:"TRIPLE DROPSET derniere serie: 15 reps -> -20% -> 15 reps -> -20% -> 15 reps."},
+ ]},
+ {nm:"Vendredi", ms:"Bras", inf:"4 supersets biceps/triceps - Antagonistes haute intensite", ex:[
+  {n:"SUPERSET: Curl pupitre EZ + Dev. couche prise serree",r:"5x(15+15) a (6+6)",rp:75,t:["SUPERSET","SANS REPOS","Pyramidal descendant"],d:"Curl pupitre barre EZ + developpe couche prise serree SANS REPOS. Serie 1 = echauffement. Pyramidal descendant."},
+  {n:"SUPERSET: Spider curl EZ + Extension triceps haltere",r:"4x(12+12) a (8+8)",rp:75,t:["SUPERSET","SANS REPOS"],d:"Spider curl barre EZ + extension triceps haltere assis SANS REPOS. Tempo normal."},
+  {n:"SUPERSET: Curl haltere 1 bras + Extension triceps corde",r:"4x(15+15) a (10+10)",rp:75,t:["SUPERSET","SANS REPOS"],d:"Curl concentration 1 bras + extension triceps a la corde SANS REPOS. Tempo normal."},
+  {n:"SUPERSET: Curl corde poulie basse + Dips entre 2 bancs",r:"4x(20+20) et (15+15)",rp:60,t:["SUPERSET","SANS REPOS"],d:"Curl corde poulie basse + dips entre 2 bancs SANS REPOS. Tempo normal."},
+ ]},
+ {nm:"Samedi", ms:"Cardio+Abdos", inf:"Cardio LISS progressif + circuit abdos", ex:[
+  {n:"Cardio vitesse moderee",r:"S1:30min 75%FCmax - S2:40min 70% - S3:50min 65% - S4:60min 60%",rp:0,t:["LISS","Zone 2-3"],d:"Tapis marche incline, elliptique, velo, stepper ou rameur. FCmax=220-age. Option: fractionner 3x10 min a la fin de 3 seances muscu."},
+  {n:"ABDOS - Circuit 3 exercices",r:"4x(20+20+1min gainage)",rp:60,t:["CIRCUIT","SANS REPOS"],d:"Exercice 1 (20 reps) + exercice 2 (20 reps) + gainage 1 min. Enchainer SANS REPOS. Recup 1 min."},
+ ]},
+]},
+{nm:"Phase 2 - Intensification", sm:"Semaines 5-8", cl:"#f97316", jours:[
+ {nm:"Lundi", ms:"Pecto + Abdos", inf:"4 exos pecto bisets/dropsets + circuit abdos intensifie", ex:[
+  {n:"Butterfly machine",r:"5x20-20-10-10-10",rp:45,t:["Echauffement S1-2","ISO 5 sec S3-5"],d:"Echauffement series 1-2. Series 3-5: 5 reps normales + 5 sec ISO + 5 reps normales + 5 sec ISO."},
+  {n:"Developpe incline halteres",r:"5x15-10-10-10-10",rp:75,t:["REPS PARTIELLES","S4-5"],d:"REPS PARTIELLES series 4-5: 10 reps completes + 5 reps partielles d en bas jusqu a mi-mouvement."},
+  {n:"BISET: Developpe machine + Pompes serrees",r:"4x(15+15) a (10+10)",rp:75,t:["BISET","SANS REPOS","EXPLOSIF"],d:"BISET: Developpe machine (tempo EXPLOSIF) + pompes serrees bout de banc SANS REPOS. Explosif = 1 sec montee, 3 sec descente."},
+  {n:"Poulies vis-a-vis de bas en haut",r:"5x20-20-15-15-15",rp:45,t:["TRIPLE DROPSET","derniere serie"],d:"TRIPLE DROPSET derniere serie: 15 reps -> -20% -> 15 reps -> -20% -> 15 reps. Poulies basses, croiser en HAUT."},
+  {n:"ABDOS - Circuit gainage lateral",r:"4x(20+15+1min gainage lateral)",rp:60,t:["CIRCUIT","Gainage lateral"],d:"Crunchs + releves de buste + 1 min gainage de CHAQUE cote. Enchainer SANS REPOS. Recup 1 min."},
+ ]},
+ {nm:"Mardi", ms:"Dos + HIIT", inf:"5 exos dos (pause partielle, dropsets, bisets) + HIIT 15 min", ex:[
+  {n:"Rowing T-barre",r:"6x20-15-10-10-10-10",rp:60,t:["Echauffement S1-2","PAUSE PARTIELLE S5-6"],d:"Echauffement series 1-2. PAUSE PARTIELLE series 5-6: reposer barre, 10 sec puis 5 reps supplementaires."},
+  {n:"Tirage poulie haute prise inversee serree",r:"4x(10+8) chaque serie",rp:75,t:["DROPSET sur CHAQUE serie"],d:"DROPSET sur CHAQUE serie: 10 reps puis -20% puis 8 reps supplementaires. Focus dorsaux bas."},
+  {n:"Rowing haltere 1 bras -> 2 bras simultanes",r:"5x10-10-12-12-12",rp:45,t:["1 bras S1-2","2 bras buste contre banc S3-5"],d:"Series 1-2: rowing 1 bras. Series 3-5: rowing 2 bras simultanes buste contre banc incline."},
+  {n:"Tirage poulie basse prise large inversee",r:"4x15-12-12-10",rp:75,t:["TRIPLE DROPSET","derniere serie"],d:"TRIPLE DROPSET derniere serie: 10 reps -> -20% -> 8 reps -> -20% -> 8 reps."},
+  {n:"Traction barre guidee + Banc lombaires",r:"4x(Max+10+5sec ISO)",rp:45,t:["Max tractions","10 reps + 5 sec ISO lombaires"],d:"Tractions barre guidee max reps. Puis banc lombaires: 10 reps + 5 sec isometrie en haut."},
+  {n:"HIIT CARDIO",r:"15 minutes",rp:0,t:["HIIT","90% FCmax"],d:"Varier: tapis course, elliptique, velo, rameur. 2 min 30 echauff 60% FCmax -> 5x(30 sec a 90% + 1 min 30 a 60%) -> 2 min 30 retour au calme."},
+ ]},
+ {nm:"Mercredi", ms:"Jambes+Mollets", inf:"4 bisets jambes & mollets - Haute densite, pliometrie", ex:[
+  {n:"BISET: Mollets debout barre guidee + Mollets assis 1 jambe",r:"5x(20+20) a (15+15)",rp:30,t:["BISET","Amplitude MAX"],d:"Mollets debout barre guidee puis SANS REPOS mollets assis 1 jambe. Amplitude maximale."},
+  {n:"BISET: Squat barre derriere + Presse inclinee",r:"5x(20+20) a (15+20)",rp:90,t:["BISET","Squat Normal + Presse RAPIDE"],d:"Squat barre tempo normal -> SANS REPOS presse inclinee tempo RAPIDE (1 sec haut, 1 sec bas). Ne JAMAIS verrouiller genoux."},
+  {n:"BISET: Montee sur banc barre + Sauts enchaines",r:"4x(12/jambe+12 sauts)",rp:90,t:["BISET","Normal + Explosif"],d:"Montee sur banc barre 12 reps/jambe (Normal) -> SANS REPOS sauts pliometriques 12 reps (Explosif)."},
+  {n:"BISET: Leg curl + Leg extension",r:"4x(15+15)",rp:60,t:["BISET","Bloquer 2 sec en haut leg ext."],d:"Leg curl (Normal) -> SANS REPOS leg extension (bloquer 2 sec en haut)."},
+ ]},
+ {nm:"Jeudi", ms:"Epaules+Trapezes+Abdos", inf:"5 exos epaules + trapezes + circuit abdos", ex:[
+  {n:"Developpe Arnold",r:"5x20-15-10-15-20",rp:75,t:["Pyramidal DESC puis ASC","Tempo LENT S2-3-4"],d:"Pyramidal DESCENDANT puis ASCENDANT. Tempo LENT series 2-3-4, normal serie 5. Echauffement serie 1."},
+  {n:"Elevations laterales halteres",r:"4x(10+10+10+10 partielles)",rp:60,t:["DROPSET INVERSE","Augmenter le poids"],d:"DROPSET INVERSE: augmenter le poids au cours d une meme serie. Ex: 10 reps 10kg -> 12kg -> 15kg -> 10 partielles 18kg."},
+  {n:"Elevation frontale barre",r:"4x15-10-10-15",rp:75,t:["Focus deltoide anterieur"],d:"Monter jusqu a hauteur epaules. Focus deltoide anterieur. Montee controlee."},
+  {n:"Arriere d epaules aux poulies hautes",r:"4x15",rp:60,t:["RECUP PARTIELLE S3-4"],d:"RECUPERATION PARTIELLE series 3-4: apres 15 reps, 10 sec SANS reposer les poulies puis 5 reps supplementaires."},
+  {n:"BISET: Oiseau contre banc + Shrugs halteres",r:"4x(20+20) a (15+15)",rp:75,t:["BISET","Tempo LENT"],d:"Oiseau contre banc + shrugs halteres. Tempo LENT: 1 sec montee, 2 sec blocage haut, 2 sec descente."},
+  {n:"ABDOS: Releve genoux chaise romaine + Crunch poulie rotations",r:"4x(15+15 face+15 rotations)",rp:30,t:["CIRCUIT","30 sec recup"],d:"Releve genoux chaise romaine + crunch poulie haute de face + crunch cotes. Enchainer SANS REPOS."},
+ ]},
+ {nm:"Vendredi", ms:"Bras + HIIT", inf:"4 supersets bras haute intensite + HIIT 15 min - Methode 21", ex:[
+  {n:"SUPERSET: Dev. couche prise serree + Curl barre droite debout",r:"5x(20+20) a (21+21)",rp:75,t:["SUPERSET","METHODE 21 derniere serie","RAPIDE"],d:"Derniere serie: methode 21 pour les 2 exos (7 partielles mi-haut + 7 partielles bas-mi + 7 completes). Tempo RAPIDE."},
+  {n:"SUPERSET: Extension halteres banc + Curl en rotation halteres",r:"4x(20+20)",rp:75,t:["SUPERSET","Tempo LENT S1-3","normal S4"],d:"Extension halteres allonge sur banc + curl avec rotation halteres. Tempo LENT series 1-3, normal serie 4."},
+  {n:"SUPERSET: Extension poulie haute 1 bras + Double biceps poulie",r:"4x(15+15)",rp:75,t:["SUPERSET","TRIPLE DROPSET derniere serie"],d:"TRIPLE DROPSET derniere serie: -20% x2. Tempo normal S1-3, RAPIDE S4."},
+  {n:"SUPERSET: Pompes diamants + Curl allonge poulie basse",r:"4x(Max+20)",rp:60,t:["SUPERSET","Max reps pompes"],d:"Pompes diamants max reps + curl allonge a la poulie basse 20 reps. Tempo normal."},
+  {n:"HIIT CARDIO",r:"15 minutes",rp:0,t:["HIIT","Intensifie"],d:"5 min echauffement 60% FCmax -> 3x(1 min sprint 90% + 1 min 60%) -> 2x(30 sec sprint 95% + 30 sec recup) -> 2 min retour calme."},
+ ]},
+ {nm:"Samedi", ms:"Cardio+Abdos", inf:"Cardio modere 30-40 min + circuit abdos", ex:[
+  {n:"Cardio vitesse moderee",r:"S5-6: 30min 60%FCmax - S7-8: 40min 65%FCmax",rp:0,t:["LISS","Zone 2"],d:"Tapis, elliptique, velo ou rameur. Option: 2x15 min ou 2x20 min a la fin de 2 seances muscu (hors jours HIIT)."},
+  {n:"ABDOS - Circuit 3 exercices",r:"4x(15+20+1min gainage)",rp:60,t:["CIRCUIT","SANS REPOS"],d:"Exercice 1 (15 reps) + exercice 2 (20 reps) + gainage 1 min. Enchainer SANS REPOS. Recup 1 min."},
+ ]},
+]},
+{nm:"Phase 3 - Maximisation", sm:"Semaines 9-12", cl:"#ef4444", jours:[
+ {nm:"Lundi", ms:"Pecto + HIIT", inf:"Trisets pectoraux + bisets + HIIT 15 min - Intensite max", ex:[
+  {n:"TRISET: Dev. incline + couche + decline barre guidee",r:"5x(15+15+15) a (10+10+10)",rp:90,t:["TRISET","SANS REPOS","EXPLOSIF"],d:"3 exercices enchaines SANS REPOS. Serie 1 = echauffement. Series 2-5: tempo EXPLOSIF (1 sec montee, 3 sec descente)."},
+  {n:"BISET: Dev. incline halteres prise serree + Ecarte incline",r:"4x(15+15) a (12+12)",rp:60,t:["BISET","SANS REPOS"],d:"Developpe incline prise serree (focus pecto interne) + ecarte incline halteres SANS REPOS."},
+  {n:"BISET: Butterfly machine 1 bras + Pectoraux debout disque",r:"4x(15/bras+15)",rp:60,t:["BISET","Tension constante"],d:"Butterfly 1 bras (15 chaque cote) + pectoraux debout disque 15 reps SANS REPOS."},
+  {n:"HIIT CARDIO",r:"15 minutes",rp:0,t:["HIIT","90% FCmax"],d:"2 min 30 echauffement 60% FCmax -> 5x(30 sec a 90% + 1 min 30 a 60%) -> 2 min 30 retour au calme."},
+ ]},
+ {nm:"Mardi", ms:"Abdos+Jambes+Mollets", inf:"Circuit abdos + 4 blocs jambes (bisets, trisets) + mollets presse", ex:[
+  {n:"ABDOS - Circuit",r:"4x(15 face+15/cote+20 crunchs)",rp:60,t:["CIRCUIT","3 exercices"],d:"Circuit: Releve genoux face + cotes + crunchs sur ballon. Enchainer 3 exercices SANS REPOS. Recup 1 min."},
+  {n:"Leg extension",r:"5x20 toutes series",rp:30,t:["RAPIDE","30 sec recup"],d:"Tempo RAPIDE toutes les series. Recup tres courte 30 sec entre chaque. Pump quadriceps intense."},
+  {n:"BISET: Presse inclinee + Fentes marchees",r:"4x(20+10)",rp:90,t:["BISET","SANS REPOS"],d:"Presse inclinee 20 reps + fentes marchees 10 reps SANS REPOS."},
+  {n:"BISET: Squat barre devant + Hack squat barre derriere",r:"4x(10+10)",rp:90,t:["BISET","TRIPLE DROPSET derniere serie"],d:"Biset enchaine. TRIPLE DROPSET derniere serie: -20% x2 supplementaires."},
+  {n:"TRISET: SdT jambes semi-tendues + Leg curl debout 1J + Leg curl assis",r:"4x(10+10+10)",rp:90,t:["TRISET ischios","SANS REPOS"],d:"3 exercices ischios enchaines SANS REPOS. Amplitude maximale. Tempo normal."},
+  {n:"Mollets presse a cuisse",r:"5x(15 int.+15 ext.+15 paralleles)",rp:30,t:["3 positions","SANS REPOS entre positions"],d:"15 reps pieds vers interieur + 15 reps vers exterieur + 15 reps paralleles SANS REPOS entre positions. Tempo rapide."},
+ ]},
+ {nm:"Mercredi", ms:"Dos + HIIT", inf:"4 blocs dos (bisets+dropsets, trisets) + HIIT 15 min", ex:[
+  {n:"BISET: Tirage poulie haute + Tirage poulie basse prise large",r:"4x(8+15+8+15)",rp:90,t:["BISET + DROPSET","chaque exercice"],d:"BISET avec DROPSET sur chaque exo: 8 reps, -20%, 15 reps -> 2eme exo idem SANS REPOS."},
+  {n:"Tractions prise serree",r:"4x20",rp:60,t:["Assistees si besoin"],d:"Tractions assistees si besoin. Tempo normal. Peak contraction 1 sec en haut."},
+  {n:"TRISET: Rowing haltere 1 bras + SdT + Rowing halteres 2 bras banc incline",r:"4x(15+12+8)",rp:90,t:["TRISET","SANS REPOS","Bloquer 3 sec en haut S3"],d:"Rowing 1 bras (15) + souleve de terre (12) + rowing 2 bras banc incline (8, bloquer 3 sec en haut)."},
+  {n:"TRISET: Rowing T-barre + Tractions serrees + Extension lombaires",r:"4x(10+21+25)",rp:90,t:["TRISET","Methode 21 tractions"],d:"Tractions methode 21: 7 completes + 7 partielles bas-mi + 7 partielles mi-haut. Extension lombaires 25 reps."},
+  {n:"HIIT CARDIO",r:"15 minutes",rp:0,t:["HIIT","90% FCmax"],d:"5 min echauff 60% FCmax -> 3x(1 min sprint 90% + 1 min 60%) -> 2x(30 sec sprint 95% + 30 sec recup) -> 2 min retour calme."},
+ ]},
+ {nm:"Jeudi", ms:"Abdos+Epaules+Trapezes", inf:"Circuit abdos + 4 trisets epaules & trapezes - Volume 3D extreme", ex:[
+  {n:"ABDOS - Circuit",r:"4x(15/cote+15)",rp:60,t:["CIRCUIT","2 exercices"],d:"Crunch rotatif (15/cote) + releve de genoux (15). Enchainer 2 exercices. Recup 1 min."},
+  {n:"TRISET POULIE: Elev. lat. main derriere dos + buste penche + Elev. frontales",r:"4x(12+12+12)",rp:60,t:["TRISET poulie","3 angles deltoide"],d:"3 variations enchainees SANS REPOS pour couvrir tous les angles du deltoide. 12 reps chaque."},
+  {n:"TRISET: Dev. assis halteres + Elev. lat. halteres + Elev. frontales barre",r:"4x(10+12+12)",rp:90,t:["TRISET","SANS REPOS"],d:"3 exercices enchaines. Tempo normal."},
+  {n:"TRISET: Dev. assis machine + Elev. frontales disque + Oiseau arriere epaules",r:"4x(21+12+12)",rp:90,t:["TRISET","1er exo METHODE 21"],d:"1er exercice methode 21: 7 completes + 7 bas-mi + 7 mi-haut."},
+  {n:"TRISET TRAPEZES: Shrugs barre devant + barre derriere + halteres",r:"4x(10+10+20)",rp:60,t:["TRISET trapezes","3 positions SANS REPOS"],d:"3 positions enchaines SANS REPOS. Peak contraction 1-2 sec chaque rep."},
+ ]},
+ {nm:"Vendredi", ms:"Bras + HIIT", inf:"Supersets et trisets bras + HIIT 15 min intensifie - Methode 21", ex:[
+  {n:"SUPERSET: Tractions pronation serrees + Dips",r:"4x(12+20)",rp:90,t:["SUPERSET","RAPIDE"],d:"Tractions pronation serree 12 reps + Dips 20 reps SANS REPOS. Tempo RAPIDE."},
+  {n:"TRISET: Barre au front + Dev. prise serree + Curl barre debout",r:"4x(8+20+12)",rp:90,t:["TRISET antagonistes","SANS REPOS"],d:"Barre au front (8) + developpe prise serree (20) + curl barre debout (12) enchaines."},
+  {n:"TRISET BICEPS: Curl marteau + Spider curl EZ + Curl 1 bras banc",r:"4x(8+12+10)",rp:90,t:["TRISET biceps","3 angles"],d:"3 angles/exercices enchaines pour couvrir tout le biceps."},
+  {n:"SUPERSET: Curl corde poulie basse + Extension corde triceps",r:"4x(21+21)",rp:60,t:["SUPERSET","METHODE 21"],d:"Methode 21 pour les 2 exos: 7 partielles bas-mi + 7 partielles mi-haut + 7 completes. Enchainer SANS REPOS."},
+  {n:"HIIT CARDIO",r:"15 minutes",rp:0,t:["HIIT intensifie","90% FCmax"],d:"2 min 30 echauff 60% FCmax -> 6x(40 sec sprint 90% + 1 min 60%) -> 2 min 30 retour calme. Intensite max de la seche."},
+ ]},
+ {nm:"Samedi", ms:"Full Body Circuit", inf:"3 trisets full body (dos, pecto, jambes) + circuit abdos - Metabolique", ex:[
+  {n:"TRISET DOS: Traction large + SdT + Tirage poulie haute serree",r:"4x(20+20+20) a (8+8+8)",rp:75,t:["TRISET DOS","Pyramidal descendant reps"],d:"Pyramidal descendant: serie 1 = 20+20+20, serie 4 = 8+8+8. Enchainer SANS REPOS."},
+  {n:"TRISET PECTO: Butterfly + Dev. incline halteres + Dev. machine",r:"4x(20+20+20) a (8+8+8)",rp:75,t:["TRISET PECTORAUX","Pyramidal descendant"],d:"Meme pyramide descendante. Enchainer les 3 SANS REPOS."},
+  {n:"TRISET JAMBES: Leg extension + Fentes marchees + Presse inclinee",r:"4x(20+20+20) a (8+8+8)",rp:75,t:["TRISET JAMBES","Pyramidal descendant"],d:"Meme pyramide. Enchainer les 3 SANS REPOS."},
+  {n:"ABDOS - Circuit final",r:"4x(15+20+1min30 gainage)",rp:60,t:["CIRCUIT FINAL"],d:"Releve genoux (15) + crunchs (20) + gainage frontal 1 min 30. Enchainer SANS REPOS."},
+ ]},
+]},
+]};
 
-var cProg=0, cP=0, cJ=0, oC={}, sD={}, kD={}, TM={};
+var BG = {phases:[
+{nm:"Phase 1 - Readaptation", sm:"Semaines 1-4", cl:"#6c63ff", jours:[
+ {nm:"Lundi", ms:"Pecto/Triceps+HIIT", inf:"60 min - 32 series - 7 exercices - Supersets + HIIT Rameur/Velo", ex:[
+  {n:"Developpe couche halteres",r:"4x8-10",rp:90,t:["Mouvement de base","Montee explosive","Descente controlee"],d:"Focus technique. Montee explosive, descente controlee 3 sec. Coudes 45 deg."},
+  {n:"SUPERSET: Developpe incline machine + Ecarte poulie haute",r:"4x(10-12+12-15)",rp:60,t:["SUPERSET","SANS REPOS","Congestion max, tempo 2-1-2"],d:"Developpe incline machine puis SANS REPOS ecarte poulie haute. Congestion maximale, tempo 2-1-2."},
+  {n:"Dips assistes ou machine",r:"3x10-15",rp:75,t:["Ajuster assistance","Focus triceps","Buste droit"],d:"Ajuster l assistance selon le niveau. Focus triceps. Buste droit."},
+  {n:"SUPERSET: Extension triceps poulie haute + Extension halteres allonge",r:"4x(12-15+12-15)",rp:45,t:["SUPERSET","SANS REPOS","Tempo lent 3-1-3"],d:"Extension poulie haute puis SANS REPOS extension halteres allonge sur banc. Tempo lent 3-1-3."},
+  {n:"HIIT Rameur/Velo",r:"6x30s",rp:90,t:["Intensite 90% FCmax","Recup active 90s"],d:"Intensite 90% FCmax. Recuperation active entre intervalles."},
+ ]},
+ {nm:"Mardi", ms:"Dos/Biceps+Abdos", inf:"55 min - 30 series - 8 exercices - Supersets Dos+Trapezes + Biceps + Abdos", ex:[
+  {n:"Traction prise large assistee",r:"4x6-10",rp:90,t:["Assistee si besoin","Focus largeur dorsal"],d:"Si possible sans aide, sinon machine assistee. Focus largeur dorsal."},
+  {n:"Tirage horizontal poulie",r:"4x10-12",rp:75,t:["Prise serree","Serrer omoplates"],d:"Prise serree. Serrer omoplates en fin de mouvement. Tempo 2-1-2."},
+  {n:"SUPERSET: Tirage vertical prise supination + Shrugs halteres",r:"4x(10-12+15-20)",rp:60,t:["SUPERSET","SANS REPOS","Trapezes tempo 2-1-2"],d:"Tirage prise supination puis SANS REPOS shrugs halteres. Trapezes, tempo 2-1-2. Peak contraction 1-2 sec."},
+  {n:"Curl biceps halteres",r:"4x10-12",rp:60,t:["Alternes","Controle parfait","Pas d elan"],d:"Alternes, controle parfait, pas d elan. Supination complete en haut."},
+  {n:"Curl marteau",r:"3x12-15",rp:60,t:["Focus brachial","Tempo controle"],d:"Focus brachial + brachio-radial. Tempo controle."},
+  {n:"Planche",r:"3x30-60s",rp:60,t:["Gainage statique","Progression temps"],d:"Gainage statique, progression du temps chaque semaine."},
+  {n:"Crunch",r:"3x15-20",rp:45,t:["Amplitude complete","Contraction peak"],d:"Amplitude complete, contraction peak en haut. Tempo 1-2-1."},
+ ]},
+ {nm:"Mercredi", ms:"Jambes+Cardio", inf:"65 min - 28 series - 6 exercices - Pyramidal, Supersets + Cardio Zone 2", ex:[
+  {n:"Squat Back",r:"5x8-10",rp:150,t:["PYRAMIDAL ASCENDANT","Descente 3 sec"],d:"Mouvement roi. PYRAMIDAL ASCENDANT (charges augmentent, reps diminuent). Descente 3 sec."},
+  {n:"Presse a cuisses",r:"4x12-15",rp:90,t:["Amplitude complete","Ne pas verrouiller genoux"],d:"Amplitude complete, controle en descente. Ne jamais verrouiller genoux."},
+  {n:"SUPERSET: Leg curl allonge + Extension quadriceps machine",r:"4x(12-15+12-15)",rp:60,t:["SUPERSET","SANS REPOS","Contraction peak 2s leg ext"],d:"Leg curl puis SANS REPOS extension quadriceps. Contraction peak 2 sec en haut leg ext."},
+  {n:"Mollets debout machine",r:"4x15-20",rp:60,t:["Amplitude MAX","Etirement 2 sec en bas"],d:"Amplitude maximale, etirement 2 sec en bas. Focus gastrocnemiens."},
+  {n:"Cardio modere",r:"20 min",rp:0,t:["Zone 2","65-75% FCmax"],d:"Zone 2 (65-75% FCmax), velo ou elliptique. Intensite conversation possible."},
+ ]},
+ {nm:"Jeudi", ms:"Epaules/Trapezes+HIIT", inf:"50 min - 26 series - 7 exercices - Supersets + HIIT Burpees", ex:[
+  {n:"Developpe militaire debout",r:"4x8-10",rp:90,t:["Mouvement de base","Gainage abdominal"],d:"Mouvement de base, gainage abdominal total. Montee explosive."},
+  {n:"Elevations laterales halteres",r:"4x12-15",rp:60,t:["Tempo controle 2-1-3","Focus deltoide moyen"],d:"Tempo controle 2-1-3, focus deltoide moyen. Legere inclinaison buste."},
+  {n:"Developpe halteres assis",r:"3x10-12",rp:75,t:["Support dos","Amplitude complete"],d:"Support dos, amplitude complete. Halteres niveau oreilles en bas."},
+  {n:"SUPERSET: Elevations posterieures poulie + Face pull",r:"4x(12-15+15-20)",rp:45,t:["SUPERSET","SANS REPOS","Rotation externe MAX"],d:"Elevations posterieures poulie puis SANS REPOS face pull. Deltoide posterieur + trapezes. Rotation externe max."},
+  {n:"Shrugs barre",r:"3x15-20",rp:60,t:["Trapezes","Peak contraction 2 sec"],d:"Trapezes, mouvement vertical pur. Peak contraction 2 sec."},
+  {n:"HIIT Burpees",r:"5x45s",rp:75,t:["Intensite max","Forme technique maintenue"],d:"Intensite maximale, forme technique maintenue. Repos 75s entre intervalles."},
+ ]},
+ {nm:"Vendredi", ms:"Full Body+Abdos", inf:"60 min - 24 series - 8 exercices - Full Body fonctionnel + abdos", ex:[
+  {n:"Souleve de terre",r:"4x6-8",rp:150,t:["Mouvement roi","Technique parfaite","Dos neutre"],d:"Mouvement roi, technique parfaite. Dos neutre, gainage total. Recup longue."},
+  {n:"Developpe couche",r:"3x8-10",rp:90,t:["Charge moderee","Focus technique"],d:"Charge moderee, focus technique. Amplitude complete."},
+  {n:"Tirage horizontal",r:"3x10-12",rp:75,t:["Equilibre push/pull"],d:"Equilibre push/pull. Prise serree ou large."},
+  {n:"Squat front",r:"3x10-12",rp:90,t:["Focus quadriceps","Gainage renforce"],d:"Plus de quadriceps, gainage renforce. Barre ou halteres."},
+  {n:"Dips",r:"3x8-12",rp:75,t:["Adapte au niveau","Focus triceps","Buste droit"],d:"Adapte au niveau, focus triceps. Buste droit."},
+  {n:"Mountain Climbers",r:"3x30s",rp:60,t:["Cardio + gainage","Rythme soutenu"],d:"Cardio + gainage, rythme soutenu. Hanches basses."},
+  {n:"Planche laterale",r:"2x20-30s",rp:45,t:["Chaque cote","Obliques"],d:"Chaque cote, obliques. Progression du temps."},
+  {n:"Bicycle crunch",r:"3x20",rp:45,t:["Rotation controlee","Tempo 1-1-1"],d:"Rotation controlee, tempo 1-1-1. Coude vers genou oppose."},
+ ]},
+]},
+{nm:"Phase 2 - Intensification", sm:"Semaines 5-8", cl:"#8b5cf6", jours:[
+ {nm:"Lundi", ms:"Pecto/Triceps+HIIT Avance", inf:"65 min - 36 series - 8 exercices - Cluster, Drop set, Triset, FST-7 + HIIT Complexe", ex:[
+  {n:"Developpe couche halteres",r:"5x6-8",rp:120,t:["CLUSTER","-2 reps + 15s repos + 2 reps (x2)"],d:"CLUSTER: 2 reps + 15s repos + 2 reps (x2 par serie). Technique parfaite."},
+  {n:"Developpe incline halteres",r:"4x8-10",rp:90,t:["DROP SET","sur derniere serie"],d:"DROP SET sur derniere serie: 8-10 reps -> -30% -> continuer a l echec."},
+  {n:"TRISET: Ecarte incline halteres + Pompes inclinees + Ecarte poulie haute",r:"4x(10-12+Max+12-15)",rp:90,t:["TRISET","SANS REPOS"],d:"3 exercices enchaines SANS REPOS. Ecarte incline + pompes jusqu a l echec + ecarte poulie. Congestion maximale."},
+  {n:"Extension triceps poulie",r:"7x12-15",rp:25,t:["FST-7","20-30s repos entre series"],d:"FST-7: 7 series avec 20-30s repos entre series. Congestion maximale triceps."},
+  {n:"Kickback halteres",r:"3x12-15",rp:60,t:["REST-PAUSE","sur derniere serie"],d:"REST-PAUSE sur derniere serie: a l echec -> 20s repos -> continuer."},
+  {n:"HIIT Complexe",r:"8x20s",rp:40,t:["Burpees + Mountain climbers + Jumping jacks","Recup 40s"],d:"Burpees + Mountain climbers + Jumping jacks. Enchainer les 3 exercices. Recup 40s."},
+ ]},
+ {nm:"Mardi", ms:"Dos/Biceps+Abdos Intensifs", inf:"60 min - 34 series - 9 exercices - Rest-pause, Drop set, Supersets, FST-7 Biceps", ex:[
+  {n:"Traction prise large",r:"5x6-10",rp:120,t:["REST-PAUSE","si echec avant 6 reps"],d:"REST-PAUSE si echec avant 6 reps: 15s repos puis continuer. Sans assistance si possible."},
+  {n:"Tirage horizontal prise serree",r:"4x8-10",rp:90,t:["DROP SET DOUBLE","derniere serie"],d:"DROP SET DOUBLE sur derniere serie: a l echec -> -25% -> -25%."},
+  {n:"SUPERSET: Tirage poulie haute prise inverse + Rowing T-Bar",r:"4x(10-12+10-12)",rp:75,t:["SUPERSET","Epaisseur du dos"],d:"Tirage prise inverse puis SANS REPOS rowing T-Bar. Epaisseur du dos. Serrer omoplates."},
+  {n:"Shrugs halteres",r:"4x12-15",rp:60,t:["Tempo super lent 4-2-4","Peak contraction 2 sec"],d:"Tempo super lent 4-2-4. Peak contraction 2 sec. Trapezes."},
+  {n:"Curl biceps barre",r:"7x10-12",rp:25,t:["FST-7","Congestion maximale biceps"],d:"FST-7: 7 series, 25s repos entre series. Congestion maximale biceps."},
+  {n:"Curl marteau",r:"3x12-15",rp:60,t:["DROP SET","sur derniere serie"],d:"DROP SET sur derniere serie. Focus brachial."},
+  {n:"Planche + montees genoux",r:"4x15-20",rp:60,t:["Dynamique","Gainage + mobilite"],d:"Dynamique: gainage + mobilite. Alterner montee genoux gauche/droite."},
+  {n:"V-Up explosifs",r:"3x12-15",rp:45,t:["Contraction peak","Tempo explosif"],d:"Contraction peak, tempo explosif. Bras et jambes simultanement."},
+ ]},
+ {nm:"Mercredi", ms:"Jambes Destruction+Cardio", inf:"70 min - 32 series - 7 exercices - Cluster, Drop set triple, FST-7, Giant set + HIIT", ex:[
+  {n:"Squat Back",r:"6x6-8",rp:180,t:["CLUSTER","3+3 reps avec 20s repos"],d:"CLUSTER: 3+3 reps avec 20s repos entre les 2 mini-series. Charges maximales."},
+  {n:"Presse a cuisses",r:"5x12-15",rp:120,t:["DROP SET TRIPLE","sur derniere serie"],d:"DROP SET TRIPLE sur derniere serie: a l echec -> -20% -> -20% -> encore."},
+  {n:"Leg curl allonge",r:"7x10-12",rp:20,t:["FST-7","Ischio-jambiers, 20s repos"],d:"FST-7 Ischio-jambiers: 7 series, 20s repos entre series. Contraction peak."},
+  {n:"GIANT SET: Extension quadriceps + Squat bulgare + Jumping squat",r:"4x(12-15+10/J+15)",rp:120,t:["GIANT SET","3 exercices SANS REPOS"],d:"Extension quadriceps + squat bulgare + jumping squat enchai nes. Explosivite maximale."},
+  {n:"Cardio HIIT intensif",r:"15 min",rp:0,t:["Intervalle 1min hard / 1min modere","90% FCmax"],d:"Intervalle 1min hard (90% FCmax) / 1min modere. Tapis, velo ou elliptique."},
+ ]},
+ {nm:"Jeudi", ms:"Epaules Completes+HIIT", inf:"55 min - 30 series - 8 exercices - Cluster, FST-7, Drop set, Triset + HIIT Combine", ex:[
+  {n:"Developpe militaire",r:"5x6-8",rp:120,t:["CLUSTER","3+3 avec 15s repos","Gainage total"],d:"CLUSTER: 3+3 avec 15s repos. Gainage abdominal total. Montee explosive."},
+  {n:"Elevations laterales",r:"7x12-15",rp:25,t:["FST-7","Deltoide moyen, 25s repos"],d:"FST-7 Deltoide moyen: 7 series, 25s repos entre series. Tension constante."},
+  {n:"Developpe halteres assis",r:"4x8-10",rp:90,t:["DROP SET","sur 2 dernieres series"],d:"DROP SET sur 2 dernieres series: a l echec -> -30% -> continuer."},
+  {n:"TRISET: Elevations anterieures + Elevations posterieures + Face pull",r:"3x(12-15+12-15+15-20)",rp:90,t:["TRISET","3 faisceaux SANS REPOS"],d:"3 exercices enchaines SANS REPOS pour couvrir tout le deltoide. Finition deltoide. Rotation externe max face pull."},
+  {n:"Shrugs barre",r:"4x12-15",rp:75,t:["REST-PAUSE","sur derniere serie"],d:"REST-PAUSE sur derniere serie. Trapezes. Peak contraction 2 sec."},
+  {n:"HIIT Combine",r:"6x30s",rp:90,t:["Battle ropes + Burpees + High knees","Recup 90s"],d:"Battle ropes + Burpees + High knees. Enchainer les 3, recup 90s."},
+ ]},
+ {nm:"Vendredi", ms:"Full Body Finition+Abdos", inf:"65 min - 28 series - 9 exercices - Cluster, Drop set, Rest-pause + Abdos intenses", ex:[
+  {n:"Souleve de terre",r:"5x5-6",rp:180,t:["CLUSTER","3+2 reps, technique parfaite"],d:"CLUSTER: 3+2 reps, technique parfaite. Charges maximales."},
+  {n:"Developpe couche",r:"4x6-8",rp:120,t:["DROP SET","sur derniere serie"],d:"DROP SET sur derniere serie: 6-8 reps -> -30% -> continuer."},
+  {n:"Traction",r:"4x8-10",rp:90,t:["REST-PAUSE","si besoin"],d:"REST-PAUSE si besoin: 15s repos puis continuer. Amplitude complete."},
+  {n:"Squat front",r:"4x8-10",rp:120,t:["Technique","Gainage","Descente profonde"],d:"Charge moderee, focus technique et gainage. Descente profonde."},
+  {n:"Dips",r:"3x Max",rp:90,t:["DROP SET","avec assistance"],d:"DROP SET avec assistance: max sans aide -> avec assistance legere."},
+  {n:"Thruster halteres",r:"3x12-15",rp:90,t:["Squat + developpe","Tempo soutenu"],d:"Squat + developpe enchaine, tempo soutenu. Cardio + force."},
+  {n:"Planche dynamique",r:"3x45s",rp:60,t:["Variations","pike, genoux, laterale"],d:"Variations: pike, montees genoux, laterale. Gainage complet."},
+  {n:"Russian twist leste",r:"3x20",rp:45,t:["Haltere ou medecine ball"],d:"Haltere ou medecine ball. Rotation controlee, obliques."},
+  {n:"Burpees finition",r:"2x10",rp:120,t:["Intensite max","Forme parfaite"],d:"Intensite maximale, forme parfaite. Finisseur de seance."},
+ ]},
+]},
+]};
 
-function gPh(){return cProg===0?PHASES:CB.phases;}
+var cProg=0, cP=0, cJ=0, oC={}, sD={}, kD={}, rD={}, oV={}, TM={};
+
+function gPh(){return cProg===0?PHASES:cProg===1?CB.phases:cProg===2?SZ.phases:BG.phases;}
 
 function nbS(r){var m=r.match(/^(\d+)/);return m?parseInt(m[1]):1;}
 function fmtT(s){var m=Math.floor(s/60),sc=s%60;return m+":"+(sc<10?"0":"")+sc;}
 function fmtRL(s){if(s>=60)return Math.floor(s/60)+"min"+(s%60?s%60+"s":"");return s+"sec";}
 function sk(p,j,e,s){return p+"_"+j+"_"+e+"_"+s;}
-function kk(p,j,e,s){return "k_"+p+"_"+j+"_"+e+"_"+s;}
+function kk(p,j,e,s,slot){return "k_"+p+"_"+j+"_"+e+"_"+s+(slot?"_"+slot:"");}
+function rk(p,j,e,s,slot){return "r_"+p+"_"+j+"_"+e+"_"+s+(slot?"_"+slot:"");}
 function tk(p,j,e){return p+"_"+j+"_"+e;}
+
+// ================================================================
+// DETECTION DES SLOTS (colonnes reps+kg par serie)
+// Priorite 1 : format (A+B+C) dans le champ r
+// Priorite 2 : tags de l exercice (DROPSET, BISET, SUPERSET, TRISET...)
+// ================================================================
+// getSlots : detecte la configuration de base d un exercice
+// lastOnly = true si la technique ne s applique qu a la derniere serie
+function getSlots(ex){
+  var r=ex.r, tags=ex.t||[];
+  var tagsStr=tags.join(" ");
+  var tagsUp=tagsStr.toUpperCase();
+
+  // -- Priorite 1 : format explicite (A+B) ou (A+B+C) dans r --
+  // Ces formats s appliquent a TOUTES les series
+  var m=r.match(/\(([^)]+)\)/);
+  if(m){
+    var inner=m[1];
+    var parts=inner.split("+");
+    if(parts.length>=2){
+      var n=Math.min(parts.length,3);
+      var labels=parts.slice(0,n).map(function(p,i){
+        var clean=p.trim().replace(/[^0-9\-xMa]/g,"").substring(0,7)||"?";
+        return {rep:clean, lbl:"Exo "+(i+1)};
+      });
+      return {n:n, slots:labels, mode:"multi", lastOnly:false};
+    }
+  }
+
+  // -- Priorite 2 : tags --
+  // Detecte si la technique est sur "derniere serie" seulement
+  var lastOnly=/derniere serie|last serie|serie finale|series 4|serie 4|series 3-4|2 dernieres/i.test(tagsStr);
+
+  // TRISET / GIANT SET -> 3 colonnes
+  if(/TRISET|GIANT SET/.test(tagsUp)){
+    return {n:3, slots:[
+      {rep:repFromR(r,0),lbl:"Exo 1"},
+      {rep:repFromR(r,1),lbl:"Exo 2"},
+      {rep:repFromR(r,2),lbl:"Exo 3"}
+    ], mode:"multi", lastOnly:false};
+  }
+
+  // BISET / SUPERSET -> 2 colonnes
+  if(/BISET|SUPERSET/.test(tagsUp)){
+    return {n:2, slots:[
+      {rep:repFromR(r,0),lbl:"Exo 1"},
+      {rep:repFromR(r,1),lbl:"Exo 2"}
+    ], mode:"multi", lastOnly:false};
+  }
+
+  // DROPSET -> 2 colonnes, mais souvent sur derniere serie seulement
+  if(/DROPSET/.test(tagsUp)){
+    var reps=repFromR(r,0);
+    return {n:2, slots:[
+      {rep:reps, lbl:"Serie"},
+      {rep:"drop", lbl:"Drop"}
+    ], mode:"drop", lastOnly:lastOnly};
+  }
+
+  // CLUSTER -> 2 colonnes
+  if(/CLUSTER/.test(tagsUp)){
+    var reps=repFromR(r,0);
+    return {n:2, slots:[
+      {rep:reps, lbl:"Bloc 1"},
+      {rep:reps, lbl:"Bloc 2"}
+    ], mode:"cluster", lastOnly:false};
+  }
+
+  // FST-7, REST-PAUSE, simple -> 1 colonne
+  return {n:1, slots:[{rep:repFromR(r,0), lbl:""}], mode:"single", lastOnly:false};
+}
+
+// Retourne le mode de slots effectif pour une serie donnee (s=index 0-based)
+// Tient compte de lastOnly et des overrides manuels de l utilisateur
+function getSlotsForSerie(ex, ei, s, nb){
+  var base=getSlots(ex);
+  var overKey="ov_"+cProg+"_"+cP+"_"+cJ+"_"+ei+"_"+s;
+  // Override manuel de l utilisateur
+  if(typeof oV[overKey]!=="undefined") return oV[overKey];
+  // lastOnly : colonne supplementaire seulement sur la derniere serie
+  if(base.lastOnly && s < nb-1){
+    return {n:1, slots:[{rep:base.slots[0].rep, lbl:""}], mode:"single"};
+  }
+  return base;
+}
+
+// Extrait les reps cibles pour un slot (index 0-based)
+function repFromR(r,idx){
+  // Format avec parentheses : (10+12+15)
+  var m=r.match(/\(([^)]+)\)/);
+  if(m){
+    var parts=m[1].split("+");
+    if(idx<parts.length)
+      return parts[idx].trim().replace(/[^0-9\-xMa\/]/g,"").substring(0,8)||"?";
+  }
+  // Format "NxREPS" ex: "4x10-10-8-6" -> pour idx>0 on prend le bon segment
+  var mx=r.match(/^[\dx]+x(.+)/i)||r.match(/x(.+)/);
+  if(mx){
+    var rpart=mx[1].trim();
+    // Peut contenir des series differentes ex: "10-10-8-6" (serie 1=10, serie 2=10, ...)
+    // mais idx ici c est le slot d exercice, pas le numero de serie
+    // Pour un exo simple, on retourne toute la partie reps
+    return rpart.replace(/[^0-9\-xMa\s]/g,"").trim().substring(0,8)||"?";
+  }
+  var ms=r.match(/(\d+)\s*[sx]/i);
+  return ms?ms[1]:"?";
+}
+
+
+var RECAP_DATA = [
+  {
+    stats:[
+      {n:"12",l:"semaines",c:"var(--p1)"},{n:"6",l:"j/semaine",c:"var(--gn)"},{n:"+6kg",l:"objectif",c:"var(--p2)"}
+    ],
+    sections:[
+      {lbl:"Complementation",cards:[
+        {h:"Matin",b:"Multivitamines 1 dose - Omega-3 3-4g - Vitamine D3 3000-5000 IU - Magnesium 250mg"},
+        {h:"Pre-training",b:"Big Shot Prozis 1 dose - Creatine 5g"},
+        {h:"Intra-training",b:"EAA 10-15g - Sel rose Himalaya 1 pincee"},
+        {h:"Post-training",b:"Pro CGT 30g - Glucides rapides 50-80g"},
+        {h:"Soir",b:"ZMB6 2 gelules (Mg + Zinc + B6) - Omega-3 2-3g"},
+      ]},
+      {lbl:"Resultats attendus",rows:[
+        ["Prise de poids","+4 a +6 kg","var(--gn)"],
+        ["Gain de force","+15 a +25%","var(--p1)"],
+        ["Masse musculaire","+3 a +5 kg","var(--p1)"],
+        ["Pectoraux","+3-5 cm",""],["Bras","+2-3 cm",""],["Cuisses","+3-4 cm",""],["Epaules","+4-6 cm",""],
+      ]},
+    ]
+  },
+  {
+    stats:[
+      {n:"12",l:"semaines",c:"var(--p1)"},{n:"6",l:"j/semaine",c:"var(--gn)"},{n:"Force",l:"objectif",c:"#6d28d9"}
+    ],
+    sections:[
+      {lbl:"Objectif",cards:[{h:"Classic Beast",b:"Programme avance de musculation 6 seances/semaine sur 3 blocs de 4 semaines. Force, masse, definition."}]},
+      {lbl:"Resultats attendus",rows:[
+        ["Masse musculaire","+4 a +7 kg","var(--gn)"],["Gain de force","+20 a +30%","var(--p1)"],
+        ["Volume global","Augmentation significative",""],
+      ]},
+    ]
+  },
+  {
+    stats:[
+      {n:"12",l:"semaines",c:"#cc0000"},{n:"5",l:"j/semaine",c:"var(--gn)"},{n:"-6kg",l:"objectif graisses",c:"#f97316"}
+    ],
+    sections:[
+      {lbl:"Programme",cards:[{h:"ShredZ - Seche 12 semaines",b:"Phase 1 (S1-4): Bisets, dropsets, Cardio LISS. Phase 2 (S5-8): Bisets sys., HIIT 2x/sem. Phase 3 (S9-12): Trisets, Giant sets, HIIT 3x/sem."}]},
+      {lbl:"Resultats attendus",rows:[
+        ["Perte de graisse","-4 a -8 kg","var(--p3)"],["Maintien musculaire","Preservation maximale","var(--gn)"],
+        ["Definition","Revelation musculaire","#f97316"],["Cardio","VO2max ameliore","var(--p1)"],
+      ]},
+    ]
+  },
+  {
+    stats:[
+      {n:"8",l:"semaines",c:"#6c63ff"},{n:"5",l:"j/semaine",c:"var(--gn)"},{n:"Forme",l:"objectif",c:"#8b5cf6"}
+    ],
+    sections:[
+      {lbl:"Programme",cards:[{h:"Back in the Game - MetamorphX Premium",b:"Phase 1 (S1-4): Readaptation & Relance - Supersets, pyramidal, HIIT leger. Phase 2 (S5-8): Intensification - Drop sets, FST-7, Rest-pause, Cluster, Giant sets."}]},
+      {lbl:"Conseils cles",rows:[
+        ["Progression","+2-5% charges/sem","var(--gn)"],["Technique","Jamais compromettre","var(--p3)"],
+        ["Sommeil","7-8h obligatoires","var(--p1)"],["Hydratation","3-4L eau/jour","var(--p1)"],
+        ["Ecoute","Un repos vaut une blessure","#f97316"],
+      ]},
+    ]
+  },
+];
+
+function buildRecap(){
+  var d=RECAP_DATA[cProg]||RECAP_DATA[0];
+  var sh="<div class=\"stgrid\">";
+  d.stats.forEach(function(s){sh+="<div class=\"stc\"><div class=\"stn\" style=\"color:"+s.c+"\">"+s.n+"</div><div class=\"stl\">"+s.l+"</div></div>";});
+  sh+="</div>";
+  d.sections.forEach(function(sec){
+    sh+="<div class=\"seclbl\">"+sec.lbl+"</div>";
+    if(sec.cards){sec.cards.forEach(function(c){sh+="<div class=\"rcard\"><div class=\"rch\">"+c.h+"</div><div class=\"rcb\">"+c.b+"</div></div>";});}
+    if(sec.rows){
+      sh+="<div class=\"rcard\"><div class=\"rcb\">";
+      sec.rows.forEach(function(r){sh+="<div class=\"rrow\"><span>"+r[0]+"</span><span"+(r[2]?" style=\"color:"+r[2]+"\"":"")+">"+r[1]+"</span></div>";});
+      sh+="</div></div>";
+    }
+  });
+  document.getElementById("pg-recap").innerHTML=sh;
+}
 
 function showTab(t){
   document.getElementById("pg-prog").style.display=t==="prog"?"block":"none";
   document.getElementById("pg-recap").style.display=t==="recap"?"block":"none";
+  if(t==="recap")buildRecap();
   document.getElementById("bn0").className="bnb"+(t==="prog"?" act":"");
   document.getElementById("bn1").className="bnb"+(t==="recap"?" act":"");
 }
 
 function setProg(p){
-  cProg=p;cP=0;cJ=0;oC={};
-  var titles=["PRO MASS EVOLUTION","CLASSIC BEAST"];
-  var pscols=["#3b82f6","#6d28d9"];
+  cProg=p;cP=0;cJ=0;oC={};oV={};
+  var titles=["PRO MASS EVOLUTION","CLASSIC BEAST","SHREDZ - SECHE 12 SEMAINES","BACK IN THE GAME"];
+  var pscols=["#3b82f6","#6d28d9","#cc0000","#5b21b6"];
   document.getElementById("prog-title").textContent=titles[p];
-  var ps0=document.getElementById("ps0");
-  var ps1=document.getElementById("ps1");
-  ps0.style.background=p===0?pscols[0]:"transparent";
-  ps0.style.color=p===0?"#fff":"var(--tx2)";
-  ps0.style.borderColor=p===0?pscols[0]:"var(--bd2)";
-  ps1.style.background=p===1?pscols[1]:"transparent";
-  ps1.style.color=p===1?"#fff":"var(--tx2)";
-  ps1.style.borderColor=p===1?pscols[1]:"var(--bd2)";
+  var ids=["ps0","ps1","ps2","ps3"];
+  for(var i=0;i<4;i++){
+    var btn=document.getElementById(ids[i]);
+    if(!btn)continue;
+    btn.style.background=p===i?pscols[i]:"transparent";
+    btn.style.color=p===i?"#fff":"var(--tx2)";
+    btn.style.borderColor=p===i?pscols[i]:"var(--bd2)";
+  }
   setPhase(0);
 }
 
@@ -535,16 +938,44 @@ function buildEx(ex,ei,col){
   var pc=t.rem<=0?"#22c55e":t.rem<=15?"#ef4444":t.rem<=30?"#f97316":"#22c55e";
   var sh="";
   if(!ic){
+    var baseSlots=getSlots(ex);
     sh="<div class=\"slbl\">Series</div><div class=\"sgrid\">";
     for(var s=0;s<nb;s++){
       var done=!!sD[sk(cP,cJ,ei,s)];
       var cur=!done&&nd===s;
-      var kv=kD[kk(cP,cJ,ei,s)]||"";
       var dotSt=cur?"border-color:"+col+";color:"+col+";border-width:2px":"";
+      var slots=getSlotsForSerie(ex,ei,s,nb);
       sh+="<div class=\"sit\">";
       sh+="<div class=\"sdot"+(done?" dn":"")+"\" id=\"sd_"+ei+"_"+s+"\" style=\""+dotSt+"\">"+(done?"&#10003;":(s+1))+"</div>";
-      sh+="<input class=\"kgi"+(done?" gn":"")+"\" id=\"ki_"+ei+"_"+s+"\" type=\"text\" inputmode=\"decimal\" placeholder=\"kg\" value=\""+kv+"\">";
-      sh+="<span class=\"kglb\">kg</span>";
+      if(slots.n===1){
+        var rv=rD[rk(cP,cJ,ei,s,"")]||slots.slots[0].rep;
+        var kv=kD[kk(cP,cJ,ei,s,"")]||"";
+        sh+="<div class=\"sit-inner\">";
+        sh+="<input class=\"kgi ri"+(done?" gn":"")+"\" id=\"ri_"+ei+"_"+s+"\" type=\"text\" inputmode=\"decimal\" placeholder=\"reps\" value=\""+rv+"\">";
+        sh+="<input class=\"kgi"+(done?" gn":"")+"\" id=\"ki_"+ei+"_"+s+"\" type=\"text\" inputmode=\"decimal\" placeholder=\"kg\" value=\""+kv+"\">";
+        sh+="<span class=\"kglb\">reps/kg</span>";
+        var bm=baseSlots.mode;
+        var tl=bm==="drop"?"+Drop":bm==="multi"?"+Multi":bm==="cluster"?"+Cluster":"+Drop";
+        sh+="<button class=\"tog-btn\" id=\"tog_"+ei+"_"+s+"\">"+tl+"</button>";
+        sh+="</div>";
+      } else {
+        sh+="<div class=\"ex-cols\">";
+        for(var sl=0;sl<slots.n;sl++){
+          if(sl>0)sh+="<div class=\"ex-divider\"></div>";
+          var slInfo=slots.slots[sl];
+          var rv2=rD[rk(cP,cJ,ei,s,sl)]||slInfo.rep;
+          var kv2=kD[kk(cP,cJ,ei,s,sl)]||"";
+          sh+="<div class=\"ex-col\">";
+          sh+="<span class=\"ex-col-lbl\">"+slInfo.lbl+"</span>";
+          sh+="<input class=\"kgi ri"+(done?" gn":"")+"\" id=\"ri_"+ei+"_"+s+"_"+sl+"\" type=\"text\" inputmode=\"decimal\" placeholder=\"reps\" value=\""+rv2+"\">";
+          sh+="<input class=\"kgi"+(done?" gn":"")+"\" id=\"ki_"+ei+"_"+s+"_"+sl+"\" type=\"text\" inputmode=\"decimal\" placeholder=\"kg\" value=\""+kv2+"\">";
+          sh+="<span class=\"kglb\">reps/kg</span>";
+          sh+="</div>";
+        }
+        sh+="</div>";
+        var tl2=slots.mode==="drop"?"-Drop":slots.mode==="cluster"?"-Cluster":"-Biset";
+        sh+="<button class=\"tog-btn act\" id=\"tog_"+ei+"_"+s+"\">"+tl2+"</button>";
+      }
       sh+="</div>";
     }
     sh+="</div>";
@@ -622,11 +1053,18 @@ function toggleSerie(ei,si){
 }
 
 document.addEventListener("click",function(e){
+  // Remonter l arbre DOM pour trouver l element cliquable avec un id
   var el=e.target;
-  if(!el||!el.id)return;
-  var id=el.id;
+  var id="";
+  while(el&&el!==document.body){
+    if(el.id){id=el.id;break;}
+    el=el.parentNode;
+  }
+  if(!id)return;
   if(id==="ps0"){setProg(0);return;}
   if(id==="ps1"){setProg(1);return;}
+  if(id==="ps2"){setProg(2);return;}
+  if(id==="ps3"){setProg(3);return;}
   if(id==="bn0"){showTab("prog");return;}
   if(id==="bn1"){showTab("recap");return;}
   var m;
@@ -652,6 +1090,23 @@ document.addEventListener("click",function(e){
     if(TM[key]&&TM[key].iv)clearInterval(TM[key].iv);
     TM[key]={rem:val,max:val,run:false,iv:null};buildSeance();return;
   }
+  // Bouton toggle technique par serie
+  m=id.match(/^tog_(\d+)_(\d+)$/);if(m){
+    var ei=parseInt(m[1]),si=parseInt(m[2]);
+    var ovKey="ov_"+cProg+"_"+cP+"_"+cJ+"_"+ei+"_"+si;
+    var ex=gPh()[cP].jours[cJ].ex[ei];
+    var nb=nbS(ex.r);
+    var current=getSlotsForSerie(ex,ei,si,nb);
+    if(current.n===1){
+      // Activer la technique de base sur cette serie
+      var base=getSlots(ex);
+      oV[ovKey]=base; // force mode multi
+    } else {
+      // Desactiver : retour a simple
+      oV[ovKey]={n:1, slots:[{rep:current.slots[0].rep, lbl:""}], mode:"single"};
+    }
+    buildSeance();return;
+  }
 },false);
 
 document.addEventListener("click",function(e){
@@ -668,8 +1123,19 @@ document.addEventListener("click",function(e){
 document.addEventListener("input",function(e){
   var el=e.target;
   if(el&&el.id){
-    var m=el.id.match(/^ki_(\d+)_(\d+)$/);
-    if(m)kD[kk(cP,cJ,parseInt(m[1]),parseInt(m[2]))]=el.value;
+    var id=el.id;
+    // kg simple: ki_ei_s
+    var m=id.match(/^ki_(\d+)_(\d+)$/);
+    if(m){kD[kk(cP,cJ,parseInt(m[1]),parseInt(m[2]),"")]=el.value;return;}
+    // kg multi: ki_ei_s_slot
+    m=id.match(/^ki_(\d+)_(\d+)_(\d+)$/);
+    if(m){kD[kk(cP,cJ,parseInt(m[1]),parseInt(m[2]),parseInt(m[3]))]=el.value;return;}
+    // reps simple: ri_ei_s
+    m=id.match(/^ri_(\d+)_(\d+)$/);
+    if(m){rD[rk(cP,cJ,parseInt(m[1]),parseInt(m[2]),"")]=el.value;return;}
+    // reps multi: ri_ei_s_slot
+    m=id.match(/^ri_(\d+)_(\d+)_(\d+)$/);
+    if(m){rD[rk(cP,cJ,parseInt(m[1]),parseInt(m[2]),parseInt(m[3]))]=el.value;return;}
   }
 },false);
 
