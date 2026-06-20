@@ -107,6 +107,7 @@ body{display:flex;flex-direction:column}
   <button class="psbtn" id="ps1">CLASSIC BEAST</button>
   <button class="psbtn" id="ps2">SHREDZ</button>
   <button class="psbtn" id="ps3">BACK IN THE GAME</button>
+  <button class="psbtn" id="ps4">BILAN HORMONAL</button>
 </div>
 <div class="ptabs" id="ptabs"></div>
 <div class="jnav" id="jnav"></div>
@@ -669,9 +670,51 @@ var BG = {phases:[
 ]},
 ]};
 
+var BH = {phases:[
+{nm:"Phase Unique - Reequilibrage Hormonal", sm:"8-12 semaines (jusqu au bilan de controle)", cl:"#0d9488", jours:[
+ {nm:"Lundi", ms:"Full Body\nForce", inf:"45-50 min - 50-60 series/sem total - Less is more", ex:[
+  {n:"Squat ou Presse inclinee",r:"4x6-8",rp:180,t:["EXERCICE ROI","Stimulus hormonal"],d:"Exercice roi pour la stimulation hormonale. Choisir squat libre si technique maitrisee, sinon presse inclinee. Echauffement progressif obligatoire. Repos complet 3 min entre series pour limiter le cortisol."},
+  {n:"Developpe halteres incline",r:"3x8-10",rp:120,t:["Pectoraux + epaules"],d:"Banc 30-35deg. Amplitude complete, tempo controle. Travail pectoraux et epaules sans aller a l echec total."},
+  {n:"Tirage vertical prise neutre",r:"3x8-10",rp:120,t:["Grand dorsal"],d:"Poignees paralleles. Torse droit, tirer vers le haut du sternum. Squeeze omoplates en fin de mouvement."},
+  {n:"Developpe militaire halteres",r:"3x8-10",rp:120,t:["Epaules"],d:"Assis, dos cale. Halteres niveau oreilles en position basse. Gainage abdominal, mouvement controle."},
+  {n:"Curl halteres",r:"2x10-12",rp:90,t:["Biceps"],d:"Alternes ou simultanes. Pas d elan, controle parfait. Supination complete en haut du mouvement."},
+  {n:"Extension triceps poulie",r:"2x10-12",rp:90,t:["Triceps"],d:"Coudes fixes contre le corps. Extension complete sans verrouiller. Squeeze triceps en fin de mouvement."},
+ ]},
+ {nm:"Mardi", ms:"Repos\ncomplet", inf:"Repos complet - Recuperation hormonale", ex:[
+  {n:"Repos complet",r:"1x Repos",rp:0,t:["Recuperation hormonale"],d:"Aucune activité physique intense. Priorite au sommeil (7-8h) et a la gestion du stress pour favoriser la recuperation hormonale et limiter le cortisol."},
+ ]},
+ {nm:"Mercredi", ms:"Full Body\nHypertrophie", inf:"45-50 min - Ischios + fessiers, etirement max", ex:[
+  {n:"Souleve de terre roumain",r:"4x8-10",rp:180,t:["EXERCICE ROI","Ischios + fessiers"],d:"Exercice roi : stimulation hormonale via la chaine posterieure. Halteres devant les cuisses, dos droit, descendre en poussant les fesses vers l arriere. NE PAS arrondir le dos. Repos 3 min."},
+  {n:"Ecarte incline halteres",r:"3x12-15",rp:90,t:["Etirement maximal","Pectoraux"],d:"Banc 30deg. Coudes legerement flechis et fixes. Etirement maximal en bas, ne pas chercher la charge lourde ici."},
+  {n:"Rowing haltere 1 bras",r:"3x12-15",rp:90,t:["Grand dorsal + rhomboides"],d:"Genou et main opposes sur le banc. Tirer le coude vers le plafond. Bien sentir le dos travailler, pas le bras."},
+  {n:"Elevations laterales",r:"3x12-15",rp:90,t:["Deltoides"],d:"Debout, legere inclinaison du buste vers l avant. Monter jusqu a hauteur des epaules, controle a la descente."},
+  {n:"Curl incline halteres",r:"2x12-15",rp:75,t:["Etirement","Biceps"],d:"Banc incline 45deg. Bras totalement relaches en bas pour l etirement, supination complete en haut."},
+  {n:"Dips triceps buste droit",r:"2x10-12",rp:75,t:["Triceps"],d:"Buste reste droit (vs penche pour pectoraux). Descente controlee, focus triceps. Adapter l amplitude selon confort epaules."},
+ ]},
+ {nm:"Jeudi", ms:"Repos\ncomplet", inf:"Repos complet - Recuperation hormonale", ex:[
+  {n:"Repos complet",r:"1x Repos",rp:0,t:["Recuperation hormonale"],d:"Aucune activité physique intense. Priorite au sommeil (7-8h) et a la gestion du stress pour favoriser la recuperation hormonale et limiter le cortisol."},
+ ]},
+ {nm:"Vendredi", ms:"Full Body\nPump", inf:"45-50 min - Congestion + sante des epaules", ex:[
+  {n:"Fentes bulgares halteres",r:"3x10-12/jambe",rp:120,t:["Quadriceps + fessiers"],d:"Pied arriere sureleve sur banc. Buste droit, genou avant ne depasse pas la pointe du pied. Controle a la descente."},
+  {n:"Ecarte poulie vis-a-vis",r:"3x15-20",rp:75,t:["Congestion","Pectoraux"],d:"Poulies hautes, croiser en bas des mains. Recherche de congestion, charges legeres a moderees."},
+  {n:"Pull over corde poulie haute",r:"3x15-20",rp:75,t:["Grand dorsal"],d:"Debout face a la poulie, bras tendus. Tirer jusqu aux cuisses en gardant les bras tendus tout le mouvement."},
+  {n:"Face pull corde",r:"3x15-20",rp:60,t:["SANTE EPAULES","CRUCIAL"],d:"Poulie haute. Tirer vers le front en ecartant la corde. Rotation externe maximale en fin de mouvement. Exercice crucial pour la sante des epaules, a ne jamais sauter."},
+  {n:"Curl marteau",r:"2x15",rp:60,t:["Brachial + brachio-radial"],d:"Prise neutre (paumes face a face) tout le long du mouvement. Focus brachial et brachio-radial."},
+  {n:"Extension triceps corde",r:"2x15",rp:60,t:["Finisher","Triceps"],d:"Coudes fixes contre le corps. Ecarter legerement la corde en bas. Finisher de seance, dernieres reps en controle."},
+  {n:"Mollets debout machine",r:"3x20",rp:60,t:["Gastrocnemiens"],d:"Amplitude complete : etirement en bas, montee maximale sur la pointe des pieds. Focus gastrocnemiens."},
+ ]},
+ {nm:"Samedi", ms:"Marche\nrecuperation", inf:"30 min - Recuperation active uniquement", ex:[
+  {n:"Marche recuperation active",r:"1x30 min",rp:0,t:["Zone 1","Recuperation active"],d:"Marche a allure tranquille (zone 1, intensite conversation facile). Aucun cardio intensif. Objectif : circulation sanguine et recuperation, sans ajouter de stress ni de cortisol."},
+ ]},
+ {nm:"Dimanche", ms:"Repos\ncomplet", inf:"Repos complet - Recuperation hormonale", ex:[
+  {n:"Repos complet",r:"1x Repos",rp:0,t:["Recuperation hormonale"],d:"Aucune activité physique intense. Priorite au sommeil (7-8h) et a la gestion du stress pour favoriser la recuperation hormonale et limiter le cortisol."},
+ ]},
+]},
+]};
+
 var cProg=0, cP=0, cJ=0, oC={}, sD={}, kD={}, rD={}, oV={}, TM={};
 
-function gPh(){return cProg===0?PHASES:cProg===1?CB.phases:cProg===2?SZ.phases:BG.phases;}
+function gPh(){return cProg===0?PHASES:cProg===1?CB.phases:cProg===2?SZ.phases:cProg===3?BG.phases:BH.phases;}
 
 function nbS(r){var m=r.match(/^(\d+)/);return m?parseInt(m[1]):1;}
 function fmtT(s){var m=Math.floor(s/60),sc=s%60;return m+":"+(sc<10?"0":"")+sc;}
@@ -847,6 +890,43 @@ var RECAP_DATA = [
       ]},
     ]
   },
+  {
+    stats:[
+      {n:"3",l:"j/semaine",c:"#0d9488"},{n:"45-50",l:"min/seance",c:"var(--gn)"},{n:"50-60",l:"series/sem",c:"var(--p1)"}
+    ],
+    sections:[
+      {lbl:"Diagnostic",cards:[
+        {h:"Verdict",b:"Programme PRO MASS trop intense pour un profil hormonal deficitaire a 51 ans. Volume (90-110 series/sem), frequence (5j) et duree (jusqu a 68 min) maintiennent un cortisol chroniquement eleve, ce qui bloque la recuperation et la prise de masse."},
+        {h:"Principe adapte",b:"Less is more. Full Body 3x/semaine, seances courtes (45-50 min), repos complet entre les exercices cles (3 min) pour favoriser un stimulus hormonal positif plutot qu un exces de cortisol."},
+      ]},
+      {lbl:"Comparatif Pro Mass vs Full Body",rows:[
+        ["Volume hebdo","90-110 -> 50-60 series","var(--gn)"],
+        ["Frequence","5j -> 3j/semaine","var(--gn)"],
+        ["Duree seance","48-68 min -> 45-50 min","var(--gn)"],
+        ["Cardio","2-3x intense -> marche 30min","var(--gn)"],
+        ["Cortisol post-seance","Tres eleve -> Modere","var(--gn)"],
+        ["Risque tendinite","Eleve -> Faible","var(--gn)"],
+      ]},
+      {lbl:"Bilan sanguin 2021 - points a surveiller",rows:[
+        ["Leucocytes / Lymphocytes","Bas - immunite fragilisee","#f97316"],
+        ["CRP","6,2 mg/l - inflammation chronique","#f97316"],
+        ["ALAT/GPT","61 U/l - surcharge hepatique","#f97316"],
+        ["Glycemie","1,11 g/l - zone limite","#f97316"],
+        ["HDL / Triglycerides","Profil lipidique limite","#f97316"],
+        ["Manquants","Testo, LH, FSH, Cortisol, SHBG, Vit D","var(--p1)"],
+      ]},
+      {lbl:"Avant la prise de sang",cards:[
+        {h:"Arret complements (7 jours avant)",b:"Zinc, Magnesium, Vitamine D3, Ashwagandha, Tribulus (7j) - Bore, Creatine (5j) - Multivitamines, Omega-3 (3-5j). Vitamine C : aucun arret necessaire."},
+        {h:"Jour J",b:"Prise de sang le matin a jeun entre 7h et 9h pour capter le pic naturel de cortisol et de testosterone."},
+      ]},
+      {lbl:"Prochaine etape",rows:[
+        ["Retour PRO MASS","Dans 3-4 mois","var(--p1)"],
+        ["Condition 1","Bilan sanguin complet realise",""],
+        ["Condition 2","Complements en place 8 semaines",""],
+        ["Condition 3","Retour erections matinales","var(--gn)"],
+      ]},
+    ]
+  },
 ];
 
 function buildRecap(){
@@ -876,11 +956,11 @@ function showTab(t){
 
 function setProg(p){
   cProg=p;cP=0;cJ=0;oC={};oV={};
-  var titles=["PRO MASS EVOLUTION","CLASSIC BEAST","SHREDZ - SECHE 12 SEMAINES","BACK IN THE GAME"];
-  var pscols=["#3b82f6","#6d28d9","#cc0000","#5b21b6"];
+  var titles=["PRO MASS EVOLUTION","CLASSIC BEAST","SHREDZ - SECHE 12 SEMAINES","BACK IN THE GAME","REEQUILIBRAGE HORMONAL"];
+  var pscols=["#3b82f6","#6d28d9","#cc0000","#5b21b6","#0d9488"];
   document.getElementById("prog-title").textContent=titles[p];
-  var ids=["ps0","ps1","ps2","ps3"];
-  for(var i=0;i<4;i++){
+  var ids=["ps0","ps1","ps2","ps3","ps4"];
+  for(var i=0;i<5;i++){
     var btn=document.getElementById(ids[i]);
     if(!btn)continue;
     btn.style.background=p===i?pscols[i]:"transparent";
@@ -1076,6 +1156,7 @@ document.addEventListener("click",function(e){
   if(id==="ps1"){setProg(1);return;}
   if(id==="ps2"){setProg(2);return;}
   if(id==="ps3"){setProg(3);return;}
+  if(id==="ps4"){setProg(4);return;}
   if(id==="bn0"){showTab("prog");return;}
   if(id==="bn1"){showTab("recap");return;}
   var m;
